@@ -1,6 +1,6 @@
 #Juan Pablo Andrade
 #8978239
-
+#03/02/2023
 #punto 1
 matriz=[[11, 23, 76, 34, 11],
         [14, 30, 92, 30, 101],
@@ -16,6 +16,7 @@ def verificarDiagonales(matriz):
     return True
 coinciden=verificarDiagonales(matriz)
 print(coinciden)
+
 
 #punto 2
 def escapicua(lista):
@@ -56,6 +57,7 @@ def comparacionListas():
 
 comparacionListas()
 
+
 #punto 4
 def mostrarPrimos(num):
     print("Números primos entre 1 y", num, ":")
@@ -91,15 +93,22 @@ def sumaPrimos(i):
     return suma
 mostrarPrimos(100)
 
+
 #unto 5
-def sumarValoresMatriz(mat, par):
+def sumarValoresMatrizR(mat, par, j):
+    if j == len(par):
+        return 0
+    a, b=par[j]
     suma=0
-    for a, b in par:
-        if a in mat:
-            for x, y in mat[a]:
-                if b==x:
-                    suma += y            
-    return suma
+    if a in mat:
+        for x, y in mat[a]:
+            if b == x:
+                suma =+ y
+    return suma + sumarValoresMatrizR(mat, par, j + 1)
+
+def sumarValoresMatriz(mat, par):
+    return sumarValoresMatrizR(mat, par, 0)
+    
 dispersa={0 : [(0, 1), (5, 4), (7, 5)],
         1 : [(6, 4), (7, 7)],
         2 : [(0, 2), (1, 2), (4, 9), (6, 1)],
@@ -107,6 +116,6 @@ dispersa={0 : [(0, 1), (5, 4), (7, 5)],
         6 : [(0, 3), (5, 6), (7, 2)],
         7 : [(0, 4), (1, 4), (2, 7)],
         8 : [(1, 9), (3, 8), (5, 7), (7, 6)]}
-        
+
 print(sumarValoresMatriz(dispersa, [(0, 0), (8, 3), (3, 5), (7, 2), (4, 3), (4,6)]))
 
