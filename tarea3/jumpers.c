@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int longitud, i, valorAc, valorAn, es_jolly;
+    int longitud, i, valorAc, valorAn, esJolly;
     while (scanf("%d", &longitud) == 1) {
         int diferencias[longitud-1];
         for (i= 0; i < longitud-1; i++) {
@@ -17,15 +17,15 @@ int main() {
             }
             valorAn= valorAc;
         }
-        es_jolly= 1;
+        esJolly= 1;
         i= 0;
-        while (i < longitud-1 && es_jolly) {
+        while (i < longitud-1 && esJolly) {
             if (diferencias[i] == 0) {
-                es_jolly= 0;
+                esJolly= 0;
             }
             i++;
         }
-        if (es_jolly) {
+        if (esJolly) {
             printf("Jolly\n");
         } else {
             printf("Not jolly\n");
