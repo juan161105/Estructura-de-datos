@@ -21,10 +21,8 @@ int main() {
     l2.anxLista(6);
     l2.anxLista(7);
     l2.anxLista(8);
-	l2.anxLista(9);
-	l2.anxLista(10);
+		
     concatenarListas(l1, l2);
-
     cout << "La lista concatenada resultante de l1 y l2 es la siguiente:";
     for(int i=1; i<=l1.longLista(); i++){
         cout << l1.infoLista(i) << " ";
